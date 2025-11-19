@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    background: #001f3f;
+}
+
+/* NAVBAR */
+nav {
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 10, 30, 0.6);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(6px);
+}
+
+nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+nav .logo {
+    color: white;
+    font-weight: bold;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+}
+
+nav .button {
+    background: #0077ff;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* SLIDER WRAPPER */
+.slider {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    margin-top: 80px;
+}
+
+/* SLIDE CONTAINER */
+.slides {
+    display: flex;
+    width: 300%;
+    height: 100%;
+    transition: 0.8s;
+}
+
+/* EACH SLIDE */
+.slide {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 30, 0.45);
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.7);
+    width: 80%;
+    max-width: 700px;
+}
+
+.content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+.content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* NAVIGATION DOTS */
+.dots {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+.dot {
+    height: 13px;
+    width: 13px;
+    margin: 0 5px;
+    display: inline-block;
+    background: white;
+    opacity: 0.5;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dot.active {
+    opacity: 1;
+}

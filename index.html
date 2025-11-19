@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ocean Slider</title>
+
+<!-- LINK TO EXTERNAL CSS -->
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">OCEAN</div>
+
+    <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">PROFILE</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">CONTENT</a></li>
+    </ul>
+
+    <div class="button">Tiket</div>
+</nav>
+
+<!-- SLIDER -->
+<div class="slider">
+    <div class="slides" id="slideContainer">
+
+        <!-- SLIDE 1 -->
+        <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2400&q=80');">
+            <div class="overlay"></div>
+            <div class="content">
+                <h1>Explore the Ocean</h1>
+                <p>Temukan keindahan laut yang biru dan tenang</p>
+            </div>
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=2400&q=80');">
+            <div class="overlay"></div>
+            <div class="content">
+                <h1>Dive Deeper</h1>
+                <p>Menelusuri dunia bawah laut yang misterius</p>
+            </div>
+        </div>
+
+        <!-- SLIDE 3 -->
+        <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=2400&q=80');">
+            <div class="overlay"></div>
+            <div class="content">
+                <h1>Feel the Waves</h1>
+                <p>Rasakan ketenangan ombak di pantai</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- DOTS -->
+    <div class="dots">
+        <span class="dot active" onclick="goToSlide(0)"></span>
+        <span class="dot" onclick="goToSlide(1)"></span>
+        <span class="dot" onclick="goToSlide(2)"></span>
+    </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+let index = 0;
+
+function showSlide() {
+    const slides = document.getElementById("slideContainer");
+    const dots = document.querySelectorAll(".dot");
+
+    slides.style.transform = `translateX(-${index * 100}%)`;
+
+    dots.forEach(dot => dot.classList.remove("active"));
+    dots[index].classList.add("active");
+}
+
+function nextSlide() {
+    index = (index + 1) % 3;
+    showSlide();
+}
+
+function goToSlide(i) {
+    index = i;
+    showSlide();
+}
+
+// Auto slide every 4 seconds
+setInterval(nextSlide, 4000);
+</script>
+
+</body>
+</html>
